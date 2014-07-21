@@ -1,0 +1,29 @@
+<li class="item">
+  <%= link_to 'Questions', questions_path %>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown">My account</a>
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to questions_user_path  do %>
+       my questions<i class="fa fa-question"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to answers_user_path do %>
+        my answers<i class="fa fa-lightbulb-o"></i>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to edit_user_registration_path do %>
+        profile<i class="fa fa-user"></i>
+      <% end %>
+    </li>
+    <li class="divider"></li>
+    <li class='item'>
+      <%= link_to destroy_user_session_path, method: 'delete' do %>
+        Sign out<i class="fa fa-sign-out"></i>
+      <% end %> 
+    </li>
+  </ul>
+</li>

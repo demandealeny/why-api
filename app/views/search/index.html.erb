@@ -1,0 +1,2 @@
+<h1><%= @search[:results].size %> results for : <%= @search[:request] %></h1>
+<%= render 'shared/listing_question', questions: @search[:results] %>

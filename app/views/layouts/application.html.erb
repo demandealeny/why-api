@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Why</title>
+  <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <%= render 'shared/nav' %>
+  <%= render 'shared/search_box' %>
+  <div class="flash">
+    <p class="notice  <%= 'hide' unless notice %>"><%= notice %></p>
+    <p class="alert  <%= 'hide' unless alert %>"><%= alert %></p>
+  </div>
+  <%= yield %>
+</body>
+</html>

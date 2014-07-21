@@ -1,0 +1,54 @@
+<section id='detail' class=''>
+  <div id="question" class='row'>
+    <div class='col-xs-12'>
+      <h1><%= @question.title %></h1>
+    </div>
+    <div class='col-xs-10'>
+      <p><%= @question.content %></p>
+      <div class="more">
+        <span class='time'>Created: <%= @question.updated_at %></span> 
+        <span class='time'>Last update: <%= @question.updated_at %></span> 
+      </div>
+    </div>
+    <div class="info col-xs-2">
+      <div>
+        <i class="fa fa-star"></i><%= @question.interest %>
+      </div>
+      <div>
+        <i class="fa fa-eye"></i><%= @question.user_view_question.count %>
+      </div>
+      <div>
+        <% if @question.active %>
+          <i class="fa fa-unlock-alt"></i>
+        <% else %>
+          <i class="fa fa-lock"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <div class="group">
+    <h2><%= @answers.size %> Answer(s)</h2>
+  </div>
+  <div id="answer">
+    <% @answers.each do |answer| %>
+    <div class="answer clearfix <%= cycle("odd", "even") %>">
+      <div class='content col-xs-10'>
+        <%= answer.content %>
+        <div class="more">
+          <span class='time'>Created: <%= answer.updated_at %></span> 
+          <span class='time'>Last update: <%= answer.updated_at %></span> 
+        </div>
+      </div>
+      <div class="info col-xs-2">
+        <div>
+          <i class="fa fa-star"></i><%= answer.interest %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="group">
+    <h2>Your answer</h2>
+  </div>
+  <%= render 'form' %>
+</section>
